@@ -1,0 +1,16 @@
+# Claude Code internals & local dev tooling (not part of the website)
+.claude/
+
+# Local launcher scripts (Windows)
+*.cmd
+
+# Uncompressed image/video backups — kept locally, never deployed
+originals/
+
+# Internal scratch / comparison pages
+logo-options.html
+
+# OS cruft
+Thumbs.db
+.DS_Store
+desktop.ini
