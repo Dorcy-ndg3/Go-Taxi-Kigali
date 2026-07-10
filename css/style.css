@@ -437,7 +437,7 @@ p { margin: 0 0 var(--space-3); }
 .hero .hero-media {
   box-sizing: border-box;
   overflow: hidden;
-  border: 1.5px solid transparent;
+  border: 2.5px solid transparent;
   transform-origin: center center;
   will-change: transform;
   backface-visibility: hidden;

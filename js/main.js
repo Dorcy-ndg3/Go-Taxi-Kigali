@@ -70,16 +70,22 @@
     var renderHero = function () {
       heroTicking = false;
       var h = heroEl.offsetHeight || window.innerHeight;
-      var p = clampHero(window.scrollY / (h * 0.9));
+      var p = clampHero(window.scrollY / (h * 0.8));
       var e = p * (2 - p); /* easeOutQuad — quick, then settles */
+      /* video pulls back into a clearly framed, floating card */
       heroMedia.style.transform =
-        "translate3d(0," + (e * 58) + "px,0) scale(" + (1 - e * 0.12) + ")";
-      heroMedia.style.borderRadius = (e * 30) + "px";
-      heroMedia.style.borderColor = "rgba(212,175,97," + (e * 0.55) + ")";
-      heroMedia.style.filter = "brightness(" + (1 - e * 0.12) + ")";
+        "translate3d(0," + (e * 46) + "px,0) scale(" + (1 - e * 0.26) + ")";
+      heroMedia.style.borderRadius = (e * 48) + "px";
+      heroMedia.style.borderColor = "rgba(233,200,126," + (e * 0.95) + ")";
+      heroMedia.style.filter = "brightness(" + (1 - e * 0.16) + ")";
+      /* elevation shadow + faint gold rim glow so the card lifts off the page */
+      heroMedia.style.boxShadow =
+        "0 " + (e * 48) + "px " + (e * 110) + "px rgba(0,0,0," + (e * 0.6) + "), " +
+        "0 0 " + (e * 46) + "px rgba(212,175,97," + (e * 0.18) + ")";
       if (heroContent) {
-        heroContent.style.transform = "translate3d(0," + (e * -48) + "px,0)";
-        heroContent.style.opacity = "" + clampHero(1 - e * 1.15);
+        heroContent.style.transform =
+          "translate3d(0," + (e * -64) + "px,0) scale(" + (1 - e * 0.05) + ")";
+        heroContent.style.opacity = "" + clampHero(1 - e * 1.2);
       }
     };
     var onHeroScroll = function () {
